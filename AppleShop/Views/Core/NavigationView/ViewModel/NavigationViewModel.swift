@@ -17,7 +17,6 @@ enum SelectionState: Hashable {
 final class NavigationViewModel: ObservableObject {
     
     @Published var selectionPath: [SelectionState] = []
-    @Published var fullScreenCover: Bool = false
     
     func back() {
         selectionPath.removeLast()
