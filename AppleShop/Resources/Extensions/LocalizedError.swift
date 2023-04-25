@@ -2,7 +2,7 @@
 //  LocalizedError.swift
 //  AppleShop
 //
-//  Created by Michał Jabłoński on 23/04/2023.
+//  Created by Kamil Wójcicki on 23/04/2023.
 //
 
 import Foundation
@@ -13,6 +13,7 @@ enum ValidationError: LocalizedError {
     case invalidPassword
     case notMatch
     case emptyFields
+    
     
     var errorDescription: String? {
         switch self {

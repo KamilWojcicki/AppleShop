@@ -34,6 +34,9 @@
 		07855B5A29F5B40700056CB3 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B5929F5B40700056CB3 /* NavigationViewModel.swift */; };
 		07855B5E29F5B43800056CB3 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B5D29F5B43800056CB3 /* NavigationView.swift */; };
 		07855B6129F5B4C500056CB3 /* KemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B6029F5B4C500056CB3 /* KemInfoView.swift */; };
+		E7638B1829F7C2AA00F3E9E9 /* CustomTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7638B1729F7C2AA00F3E9E9 /* CustomTextModifier.swift */; };
+		E7638B1A29F7C5E500F3E9E9 /* TextImageVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7638B1929F7C5E500F3E9E9 /* TextImageVStack.swift */; };
+		E7638B2429F7F15000F3E9E9 /* DeviceInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7638B2329F7F15000F3E9E9 /* DeviceInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		07855B5929F5B40700056CB3 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		07855B5D29F5B43800056CB3 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		07855B6029F5B4C500056CB3 /* KemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KemInfoView.swift; sourceTree = "<group>"; };
+		E7638B1729F7C2AA00F3E9E9 /* CustomTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextModifier.swift; sourceTree = "<group>"; };
+		E7638B1929F7C5E500F3E9E9 /* TextImageVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageVStack.swift; sourceTree = "<group>"; };
+		E7638B2329F7F15000F3E9E9 /* DeviceInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +178,8 @@
 			children = (
 				075ABF0C29F50C7700E3B700 /* CustomTextField.swift */,
 				075ABF0E29F50D4200E3B700 /* CustomSecureField.swift */,
+				E7638B1729F7C2AA00F3E9E9 /* CustomTextModifier.swift */,
+				E7638B1929F7C5E500F3E9E9 /* TextImageVStack.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -281,8 +289,8 @@
 		07855B5229F5B15600056CB3 /* Device */ = {
 			isa = PBXGroup;
 			children = (
-				07855B5029F5B07500056CB3 /* DeviceInfo.swift */,
-				07855B5329F5B17900056CB3 /* DeviceInfoExtended.swift */,
+				E7638B2229F7F13900F3E9E9 /* ViewModel */,
+				E7638B2129F7F12B00F3E9E9 /* View */,
 			);
 			path = Device;
 			sourceTree = "<group>";
@@ -326,6 +334,23 @@
 				07855B6029F5B4C500056CB3 /* KemInfoView.swift */,
 			);
 			path = Info;
+			sourceTree = "<group>";
+		};
+		E7638B2129F7F12B00F3E9E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07855B5029F5B07500056CB3 /* DeviceInfo.swift */,
+				07855B5329F5B17900056CB3 /* DeviceInfoExtended.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E7638B2229F7F13900F3E9E9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E7638B2329F7F15000F3E9E9 /* DeviceInfoViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,7 +427,10 @@
 				075ABF0D29F50C7700E3B700 /* CustomTextField.swift in Sources */,
 				075ABF0629F5080900E3B700 /* LoginView.swift in Sources */,
 				07855B3D29F528F200056CB3 /* RegisterViewModel.swift in Sources */,
+				E7638B2429F7F15000F3E9E9 /* DeviceInfoViewModel.swift in Sources */,
+				E7638B1829F7C2AA00F3E9E9 /* CustomTextModifier.swift in Sources */,
 				075ABF0F29F50D4200E3B700 /* CustomSecureField.swift in Sources */,
+				E7638B1A29F7C5E500F3E9E9 /* TextImageVStack.swift in Sources */,
 				07855B2529F51A9D00056CB3 /* MainView.swift in Sources */,
 				07855B5729F5B25000056CB3 /* CartView.swift in Sources */,
 				07855B5A29F5B40700056CB3 /* NavigationViewModel.swift in Sources */,

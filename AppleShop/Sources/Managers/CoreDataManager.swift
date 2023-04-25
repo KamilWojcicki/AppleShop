@@ -2,18 +2,11 @@
 //  CoreDataManager.swift
 //  AppleShop
 //
-//  Created by Michał Jabłoński on 23/04/2023.
+//  Created by Kamil Wójcicki on 23/04/2023.
 //
 
 import Foundation
 import CoreData
-
-struct PersonalModel: Identifiable {
-    let id = UUID().uuidString
-    let username: String
-    let password: String
-}
-
 
 // MARK: CoreData
 class CoreDataManager {
@@ -46,11 +39,31 @@ extension CoreDataManager {
             return []
         }
     }
+    //func fetching items
+    func fetchItems() -> [Item] {
+        let request = NSFetchRequest<Item>(entityName: "Item")
+        
+        do {
+            let items = try context.fetch(request)
+            return items
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
+    }
     
     func addUser(username: String, password: String) {
         let newUser = User(context: context)
         newUser.username = username
         newUser.password = password
+        save()
+    }
+    //func add items
+    func addItems(name: String, price: Double) {
+        let newItem = Item(context: context)
+        newItem.name = name
+        newItem.price = price
+        newItem.users = []
         save()
     }
     
@@ -59,7 +72,7 @@ extension CoreDataManager {
             try context.save()
             print("Saved successfully!")
         } catch {
-            print("Erro saving Core Data. \(error.localizedDescription)")
+            print("Error saving Core Data. \(error.localizedDescription)")
         }
     }
 }

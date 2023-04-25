@@ -2,7 +2,7 @@
 //  CartView.swift
 //  AppleShop
 //
-//  Created by Michał Jabłoński on 23/04/2023.
+//  Created by Kamil Wójcicki on 23/04/2023.
 //
 
 import SwiftUI
@@ -11,10 +11,18 @@ final class CartViewModel: ObservableObject {
     @Inject var coreData: CoreDataProtocol
     
     @Published var users: [User] = []
-    init() { getUsers() }
+    @Published var items: [Item] = []
+    init() {
+        getUsers()
+        getItems()
+    }
     
     func getUsers() {
         self.users = coreData.fetchUsers()
+    }
+    
+    func getItems() {
+        self.items = coreData.fetchItems()
     }
 }
 
@@ -24,7 +32,8 @@ struct CartView: View {
     
     var body: some View {
         VStack {
-            Text("USERS")
+            
+            Text("ITEMS")
                 .font(.largeTitle)
             
             ForEach(vm.users) { user in
@@ -44,8 +53,14 @@ struct sampleView: View {
     let entity: User
     var body: some View {
         VStack {
-            Text(entity.username ?? "Username")
-            Text(entity.password ?? "Password")
+            if let items = entity.items?.allObjects as? [Item] {
+                Text("Items:")
+                    .bold()
+                ForEach(items) { item in
+                    Text(item.name ?? "")
+                    Text("\(item.price)")
+                }
+            }
         }
     }
 }

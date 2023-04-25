@@ -2,15 +2,15 @@
 //  DIManager.swift
 //  AppleShop
 //
-//  Created by Michał Jabłoński on 23/04/2023.
+//  Created by Kamil Wójcicki on 23/04/2023.
 //
 
 import Foundation
 
 class Dependencies {
     init() {
-        @Provider var coreData = MockDataService() as CoreDataProtocol
-        @Provider var deviceService = MockDeviceService() as DeviceServiceProtocol
+        @Provider var coreData = CoreDataService(coreData: CoreDataManager()) as CoreDataProtocol
+        @Provider var deviceService = DeviceService() as DeviceServiceProtocol
     }
 }
 

@@ -2,7 +2,7 @@
 //  LaunchAppView.swift
 //  AppleShop
 //
-//  Created by Michał Jabłoński on 23/04/2023.
+//  Created by Kamil Wójcicki on 23/04/2023.
 //
 
 import SwiftUI
@@ -28,9 +28,10 @@ struct LaunchAppView: View {
                 .resizable()
                 .scaledToFill()
                 .scaleEffect(1.3)
-                .offset(x: -150, y: -50)
+                .offset(x: -140, y: -80)
                 .opacity(0.6)
                 .shadow(color: Color.black, radius: 10, x: 0.0, y: 12.0)
+                .foregroundColor(Color.logoBackgroundColor)
         }
     }
 }

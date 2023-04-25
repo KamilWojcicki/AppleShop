@@ -2,7 +2,7 @@
 //  AppleShopApp.swift
 //  AppleShop
 //
-//  Created by Michał Jabłoński on 23/04/2023.
+//  Created by Kamil Wójcicki on 23/04/2023.
 //
 
 import SwiftUI
