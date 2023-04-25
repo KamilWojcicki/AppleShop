@@ -12,6 +12,7 @@ import CoreData
 class CoreDataManager {
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
+    var users: [User] = []
     
     init() {
         container = NSPersistentContainer(name: "AppleShopProjectApp")
@@ -21,6 +22,8 @@ class CoreDataManager {
             }
         }
         context = container.viewContext
+        
+        self.users = fetchUsers()
     }
 }
 
@@ -54,18 +57,24 @@ extension CoreDataManager {
     
     func addUser(username: String, password: String) {
         let newUser = User(context: context)
+        newUser.id = UUID()
         newUser.username = username
         newUser.password = password
         save()
     }
     //func add items
-    func addItems(name: String, price: Double) {
+    func addItems(name: String, price: Double, username: String) {
         let newItem = Item(context: context)
+        
+        guard let indexUsers = users.firstIndex(where: {$0.username == username}) else { return }
+        
+        newItem.id = UUID()
         newItem.name = name
         newItem.price = price
-        newItem.users = []
+        newItem.users = [users[indexUsers]]
         save()
     }
+    
     
     func save() {
         do {
@@ -77,7 +86,13 @@ extension CoreDataManager {
     }
 }
 
-
+extension CoreDataManager {
+    func currentUser(username: String) throws -> User {
+        guard let indexUsers = users.firstIndex(where: {$0.username == username}) else { throw URLError(.fileDoesNotExist)}
+        
+        return users[indexUsers]
+    }
+}
 
 
 

@@ -10,7 +10,8 @@ import SwiftUI
 struct DeviceInfoExtended: View {
     
     let dev: DeviceModel
-    @StateObject private var vm = DeviceInfoViewModel()
+    @StateObject var vm = DeviceInfoViewModel()
+    @AppStorage("username") var currentUsername: String?
     
     var body: some View {
         VStack{
@@ -37,7 +38,10 @@ struct DeviceInfoExtended: View {
             .clipShape(RoundedRectangle(cornerRadius: 30))
             
             Button(action: {
-                vm.addItem()
+                if let username = currentUsername {
+                    vm.addItem(device: dev, username: username)
+                }
+                
             }, label: {
                 Text("Add to CART")
                     .font(.headline)

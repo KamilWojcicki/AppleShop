@@ -10,6 +10,8 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject private var root: RootViewModel
     @StateObject private var vm = LoginViewModel()
+    @AppStorage("username") var currentUsername: String?
+    
     init() { _ = Dependencies() }
     
     var body: some View {
@@ -60,6 +62,7 @@ extension LoginView {
         Button {
             do {
                 try vm.validate()
+                currentUsername = vm.username
                 root.isLogin = true
             } catch {
                 vm.message = error.localizedDescription

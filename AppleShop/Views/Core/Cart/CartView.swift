@@ -12,6 +12,7 @@ final class CartViewModel: ObservableObject {
     
     @Published var users: [User] = []
     @Published var items: [Item] = []
+    @AppStorage("username") var currentUsername: String?
     init() {
         getUsers()
         getItems()
@@ -24,10 +25,24 @@ final class CartViewModel: ObservableObject {
     func getItems() {
         self.items = coreData.fetchItems()
     }
+    
+    func currentUser() throws-> User {
+        var users: [User] = []
+        
+        users = coreData.fetchUsers()
+        
+        guard let indexUsers = users.firstIndex(where: {$0.username == currentUsername}) else{
+            
+            throw URLError(.fileDoesNotExist)
+        }
+        return users[indexUsers]
+        
+    }
 }
 
 struct CartView: View {
     @StateObject private var vm = CartViewModel()
+    
     init() { _ = Dependencies() }
     
     var body: some View {
@@ -36,8 +51,19 @@ struct CartView: View {
             Text("ITEMS")
                 .font(.largeTitle)
             
-            ForEach(vm.users) { user in
-                sampleView(entity: user)
+//            ForEach(vm.users) { user in
+//                sampleView(entity: user)
+//            }
+//            sampleView(entity: vm.currentUser())
+            VStack {
+                if let items = vm.currentUser().items?.allObjects as? [Item] {
+                    Text("Items:")
+                        .bold()
+                    ForEach(items) { item in
+                        Text(item.name ?? "")
+                        Text("\(item.price)")
+                    }
+                }
             }
         }
     }

@@ -12,11 +12,16 @@ protocol CoreDataProtocol {
     func fetchUsers() -> [User]
     func fetchItems() -> [Item]
     func addUser(username: String, password: String)
-    func addItems(name: String, price: Double)
+    func addItems(name: String, price: Double, username: String)
     func save()
+    func currentUser(username: String) throws -> User
 }
 
 class CoreDataService: CoreDataProtocol {
+    func currentUser(username: String) throws -> User {
+       try coreData.currentUser(username: username)
+    }
+    
     
     private let coreData: CoreDataManager
     
@@ -35,8 +40,8 @@ class CoreDataService: CoreDataProtocol {
         coreData.addUser(username: username, password: password)
     }
     //added items
-    func addItems(name: String, price: Double) {
-        coreData.addItems(name: name, price: price)
+    func addItems(name: String, price: Double, username: String) {
+        coreData.addItems(name: name, price: price, username: username)
     }
     
     func save() {
@@ -48,6 +53,14 @@ class CoreDataService: CoreDataProtocol {
 
 
 class MockDataService: CoreDataProtocol {
+    func currentUser(username: String) throws -> User {
+        let user1 = User(context: context)
+        user1.username = "login123"
+        user1.password = "haslo123"
+        
+        return user1
+    }
+    
     
     private let context: NSManagedObjectContext = {
             let coordinator = NSPersistentStoreCoordinator(managedObjectModel: NSManagedObjectModel.mergedModel(from: [Bundle.main])!)
@@ -75,7 +88,7 @@ class MockDataService: CoreDataProtocol {
     
     func addUser(username: String, password: String) { }
     
-    func addItems(name: String, price: Double) { }
+    func addItems(name: String, price: Double, username: String) { }
     
     func save() { }
 }

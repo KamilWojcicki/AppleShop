@@ -9,12 +9,12 @@ import Foundation
 
 final class DeviceInfoViewModel: ObservableObject {
     @Inject var coreData: CoreDataProtocol
-    @Inject var device: DeviceServiceProtocol
-    // var dev: DeviceModel
-    
+   
     
     var items: [Item] = []
-    init() { getItems() }
+    init() {
+        getItems()
+    }
     
 }
 
@@ -23,7 +23,7 @@ extension DeviceInfoViewModel {
         self.items = coreData.fetchItems()
     }
     
-    func addItem() {
-        coreData.addItems(name: device.name, price: device.price)
+    func addItem(device: DeviceModel, username: String) {
+        coreData.addItems(name: device.name, price: device.price, username: username)
     }
 }
