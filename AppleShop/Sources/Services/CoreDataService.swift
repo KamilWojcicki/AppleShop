@@ -13,15 +13,22 @@ protocol CoreDataProtocol {
     func fetchItems() -> [Item]
     func addUser(username: String, password: String)
     func addItems(name: String, price: Double, username: String)
-    func save()
     func currentUser(username: String) throws -> User
+    func delete(offset: IndexSet)
+    func save()
+    //func currentItem(id: UUID) throws -> Item
+    
 }
 
 class CoreDataService: CoreDataProtocol {
-    func currentUser(username: String) throws -> User {
-       try coreData.currentUser(username: username)
+    
+    func delete(offset: IndexSet) {
+        coreData.deleteItem(offset: offset)
     }
     
+//    func currentItem(id: UUID) throws -> Item {
+//        try coreData.currentItem(id: id)
+//    }
     
     private let coreData: CoreDataManager
     
@@ -44,6 +51,10 @@ class CoreDataService: CoreDataProtocol {
         coreData.addItems(name: name, price: price, username: username)
     }
     
+    func currentUser(username: String) throws -> User {
+       try coreData.currentUser(username: username)
+    }
+    
     func save() {
         coreData.save()
     }
@@ -53,14 +64,17 @@ class CoreDataService: CoreDataProtocol {
 
 
 class MockDataService: CoreDataProtocol {
-    func currentUser(username: String) throws -> User {
-        let user1 = User(context: context)
-        user1.username = "login123"
-        user1.password = "haslo123"
+    func delete(offset: IndexSet) {
         
-        return user1
     }
     
+//    func currentItem(id: UUID) throws -> Item {
+//        let item1 = Item(context: context)
+//        item1.name = "iPhone SE"
+//        item1.price = 1499.0
+//
+//        return item1
+//    }
     
     private let context: NSManagedObjectContext = {
             let coordinator = NSPersistentStoreCoordinator(managedObjectModel: NSManagedObjectModel.mergedModel(from: [Bundle.main])!)
@@ -89,6 +103,14 @@ class MockDataService: CoreDataProtocol {
     func addUser(username: String, password: String) { }
     
     func addItems(name: String, price: Double, username: String) { }
+    
+    func currentUser(username: String) throws -> User {
+        let user1 = User(context: context)
+        user1.username = "login123"
+        user1.password = "haslo123"
+        
+        return user1
+    }
     
     func save() { }
 }

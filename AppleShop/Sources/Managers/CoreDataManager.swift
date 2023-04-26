@@ -10,9 +10,11 @@ import CoreData
 
 // MARK: CoreData
 class CoreDataManager {
+    static let instance = CoreDataManager()
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
     var users: [User] = []
+    var items: [Item] = []
     
     init() {
         container = NSPersistentContainer(name: "AppleShopProjectApp")
@@ -24,6 +26,7 @@ class CoreDataManager {
         context = container.viewContext
         
         self.users = fetchUsers()
+        self.items = fetchItems()
     }
 }
 
@@ -75,11 +78,27 @@ extension CoreDataManager {
         save()
     }
     
+    func deleteItem(offset: IndexSet) {
+        //var items: [Item] = []
+        guard let removeItem = offset.first else { return }
+        let entity = items[removeItem]
+        context.delete(entity)
+        save()
+    }
+    
+//    func deleteItem(id: UUID) {
+//        guard let indexItem = items.firstIndex(where: { $0.id == id }) else { return }
+//        
+//        let item = items[indexItem]
+//        context.delete(item)
+//        save()
+//    }
     
     func save() {
         do {
             try context.save()
             print("Saved successfully!")
+            
         } catch {
             print("Error saving Core Data. \(error.localizedDescription)")
         }
@@ -93,6 +112,14 @@ extension CoreDataManager {
         return users[indexUsers]
     }
 }
+
+//extension CoreDataManager {
+//    func currentItem(id: UUID) throws -> Item {
+//        guard let indexItem = items.firstIndex(where: { $0.id == id }) else { throw URLError(.fileDoesNotExist)}
+//
+//        return items[indexItem]
+//    }
+//}
 
 
 
