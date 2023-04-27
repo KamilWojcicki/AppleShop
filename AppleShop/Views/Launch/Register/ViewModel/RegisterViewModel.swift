@@ -8,7 +8,7 @@
 import Foundation
 
 final class RegisterViewModel: ObservableObject {
-    @Inject var coreData: CoreDataProtocol
+    @Inject var coreData: CoreDataManager
     
     @Published var username: String = ""
     @Published var password: String = ""
@@ -20,20 +20,11 @@ final class RegisterViewModel: ObservableObject {
     var emptyFields: Bool {
         username.isEmpty || password.isEmpty || confirmPassword.isEmpty
     }
-    
-    // MARK: CoreData
-    var users: [User] = []
-    init() { getUsers() }
-    
 }
 
 
 // MARK: Functions
 extension RegisterViewModel {
-    
-    func getUsers() {
-        self.users = coreData.fetchUsers()
-    }
     
     func signUp() throws {
         try validate()
@@ -69,7 +60,7 @@ extension RegisterViewModel {
     }
     
     func userExist() -> Bool {
-        users.contains(where: { $0.username == username } )
+        coreData.users.contains(where: { $0.username == username } )
     }
     
 }

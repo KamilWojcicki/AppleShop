@@ -7,23 +7,10 @@
 
 import Foundation
 
-final class DeviceInfoViewModel: ObservableObject {
-    @Inject var coreData: CoreDataProtocol
-   
+final class DeviceInfoExtendedViewModel: ObservableObject {
+    @Inject var coreData: CoreDataManager
     
-    var items: [Item] = []
-    init() {
-        getItems()
-    }
-    
-}
-
-extension DeviceInfoViewModel {
-    func getItems() {
-        self.items = coreData.fetchItems()
-    }
-    
-    func addItem(device: DeviceModel, username: String) {
-        coreData.addItems(name: device.name, price: device.price, username: username)
+    func addItem(device: DeviceModel) {
+        coreData.addItem(device: device)
     }
 }

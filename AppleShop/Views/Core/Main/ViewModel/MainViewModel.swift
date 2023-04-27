@@ -22,7 +22,6 @@ class MainViewModel: ObservableObject {
     
     func search(_ value: String = "") {
         let fileteredData = data.filter { $0.name.lowercased().contains(value.lowercased()) }
-        
         self.searchResult = searchTerm.isEmpty ? data : fileteredData
     }
 }

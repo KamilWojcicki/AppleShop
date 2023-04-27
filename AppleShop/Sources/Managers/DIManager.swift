@@ -9,7 +9,7 @@ import Foundation
 
 class Dependencies {
     init() {
-        @Provider var coreData = CoreDataService(coreData: CoreDataManager()) as CoreDataProtocol
+        @Provider var coreData = CoreDataManager()
         @Provider var deviceService = DeviceService() as DeviceServiceProtocol
     }
 }

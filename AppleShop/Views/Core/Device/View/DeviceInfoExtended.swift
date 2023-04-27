@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct DeviceInfoExtended: View {
-    
+    @StateObject var vm = DeviceInfoExtendedViewModel()
     let dev: DeviceModel
-    @StateObject var vm = DeviceInfoViewModel()
-    @AppStorage("username") var currentUsername: String?
+    
+    init(dev: DeviceModel) {
+        self.dev = dev
+        _ = Dependencies()
+    }
     
     var body: some View {
         VStack{
             
             Spacer()
-            
             
             Image(dev.image)
                 .resizable()
@@ -25,23 +27,17 @@ struct DeviceInfoExtended: View {
                 .padding(.bottom, 10)
             
             HStack(spacing: 20){
-
                 Text("Model:\n\(dev.name)")
-                Spacer()
                 Text("Price: \n\(dev.price, specifier: "%.2f") zł")
-                    
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
-            .frame(maxWidth: .infinity)
             .padding()
             .padding(.horizontal)
             .background(Color.textBackgroundColor)
             .clipShape(RoundedRectangle(cornerRadius: 30))
             
             Button(action: {
-                if let username = currentUsername {
-                    vm.addItem(device: dev, username: username)
-                }
-                
+                vm.addItem(device: dev)
             }, label: {
                 Text("Add to CART")
                     .font(.headline)

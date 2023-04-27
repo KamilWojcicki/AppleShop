@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07574E3C29FA5FA600450D07 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07574E3B29FA5FA600450D07 /* CartViewModel.swift */; };
+		07574E3F29FA642F00450D07 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07574E3E29FA642F00450D07 /* ViewModifier.swift */; };
+		07574E4129FA64B700450D07 /* CustomSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07574E4029FA64B700450D07 /* CustomSection.swift */; };
 		075ABEF429F5077000E3B700 /* AppleShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075ABEF329F5077000E3B700 /* AppleShopApp.swift */; };
 		075ABEF629F5077000E3B700 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075ABEF529F5077000E3B700 /* ContentView.swift */; };
 		075ABEF829F5077100E3B700 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEF729F5077100E3B700 /* Assets.xcassets */; };
@@ -26,7 +29,6 @@
 		07855B3D29F528F200056CB3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B3C29F528F200056CB3 /* RegisterViewModel.swift */; };
 		07855B4029F52A9700056CB3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B3F29F52A9700056CB3 /* LoginViewModel.swift */; };
 		07855B4829F5A82E00056CB3 /* DeviceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B4729F5A82E00056CB3 /* DeviceService.swift */; };
-		07855B4A29F5A8B700056CB3 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B4929F5A8B700056CB3 /* CoreDataService.swift */; };
 		07855B4F29F5AEA700056CB3 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B4E29F5AEA700056CB3 /* MainViewModel.swift */; };
 		07855B5129F5B07500056CB3 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B5029F5B07500056CB3 /* DeviceInfo.swift */; };
 		07855B5429F5B17900056CB3 /* DeviceInfoExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B5329F5B17900056CB3 /* DeviceInfoExtended.swift */; };
@@ -34,12 +36,14 @@
 		07855B5A29F5B40700056CB3 /* NavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B5929F5B40700056CB3 /* NavigationViewModel.swift */; };
 		07855B5E29F5B43800056CB3 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B5D29F5B43800056CB3 /* NavigationView.swift */; };
 		07855B6129F5B4C500056CB3 /* KemInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855B6029F5B4C500056CB3 /* KemInfoView.swift */; };
-		E7638B1829F7C2AA00F3E9E9 /* CustomTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7638B1729F7C2AA00F3E9E9 /* CustomTextModifier.swift */; };
 		E7638B1A29F7C5E500F3E9E9 /* TextImageVStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7638B1929F7C5E500F3E9E9 /* TextImageVStack.swift */; };
 		E7638B2429F7F15000F3E9E9 /* DeviceInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7638B2329F7F15000F3E9E9 /* DeviceInfoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07574E3B29FA5FA600450D07 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		07574E3E29FA642F00450D07 /* ViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifier.swift; sourceTree = "<group>"; };
+		07574E4029FA64B700450D07 /* CustomSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSection.swift; sourceTree = "<group>"; };
 		075ABEF029F5077000E3B700 /* AppleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075ABEF329F5077000E3B700 /* AppleShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleShopApp.swift; sourceTree = "<group>"; };
 		075ABEF529F5077000E3B700 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,7 +64,6 @@
 		07855B3C29F528F200056CB3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		07855B3F29F52A9700056CB3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		07855B4729F5A82E00056CB3 /* DeviceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceService.swift; sourceTree = "<group>"; };
-		07855B4929F5A8B700056CB3 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		07855B4E29F5AEA700056CB3 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		07855B5029F5B07500056CB3 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		07855B5329F5B17900056CB3 /* DeviceInfoExtended.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoExtended.swift; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		07855B5929F5B40700056CB3 /* NavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewModel.swift; sourceTree = "<group>"; };
 		07855B5D29F5B43800056CB3 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
 		07855B6029F5B4C500056CB3 /* KemInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KemInfoView.swift; sourceTree = "<group>"; };
-		E7638B1729F7C2AA00F3E9E9 /* CustomTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextModifier.swift; sourceTree = "<group>"; };
 		E7638B1929F7C5E500F3E9E9 /* TextImageVStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageVStack.swift; sourceTree = "<group>"; };
 		E7638B2329F7F15000F3E9E9 /* DeviceInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07574E3929FA5F9600450D07 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				07574E3B29FA5FA600450D07 /* CartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		07574E3A29FA5F9C00450D07 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				07855B5629F5B25000056CB3 /* CartView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		07574E3D29FA642300450D07 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				07574E3E29FA642F00450D07 /* ViewModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		075ABEE729F5077000E3B700 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +193,7 @@
 		075ABF0829F50C3200E3B700 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				07574E3D29FA642300450D07 /* Modifiers */,
 				07855B1629F50F5700056CB3 /* Extensions */,
 				075ABF0929F50C4400E3B700 /* ViewComponents */,
 			);
@@ -178,8 +205,8 @@
 			children = (
 				075ABF0C29F50C7700E3B700 /* CustomTextField.swift */,
 				075ABF0E29F50D4200E3B700 /* CustomSecureField.swift */,
-				E7638B1729F7C2AA00F3E9E9 /* CustomTextModifier.swift */,
 				E7638B1929F7C5E500F3E9E9 /* TextImageVStack.swift */,
+				07574E4029FA64B700450D07 /* CustomSection.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -205,8 +232,8 @@
 		07855B2629F51B6400056CB3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				07855B4529F5A81E00056CB3 /* Services */,
 				07855B3529F51F2000056CB3 /* Managers */,
+				07855B4529F5A81E00056CB3 /* Services */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -256,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				07855B4729F5A82E00056CB3 /* DeviceService.swift */,
-				07855B4929F5A8B700056CB3 /* CoreDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -298,7 +324,8 @@
 		07855B5529F5B24100056CB3 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
-				07855B5629F5B25000056CB3 /* CartView.swift */,
+				07574E3929FA5F9600450D07 /* ViewModel */,
+				07574E3A29FA5F9C00450D07 /* View */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -428,13 +455,15 @@
 				075ABF0629F5080900E3B700 /* LoginView.swift in Sources */,
 				07855B3D29F528F200056CB3 /* RegisterViewModel.swift in Sources */,
 				E7638B2429F7F15000F3E9E9 /* DeviceInfoViewModel.swift in Sources */,
-				E7638B1829F7C2AA00F3E9E9 /* CustomTextModifier.swift in Sources */,
 				075ABF0F29F50D4200E3B700 /* CustomSecureField.swift in Sources */,
 				E7638B1A29F7C5E500F3E9E9 /* TextImageVStack.swift in Sources */,
 				07855B2529F51A9D00056CB3 /* MainView.swift in Sources */,
 				07855B5729F5B25000056CB3 /* CartView.swift in Sources */,
 				07855B5A29F5B40700056CB3 /* NavigationViewModel.swift in Sources */,
+				07574E4129FA64B700450D07 /* CustomSection.swift in Sources */,
+				07574E3C29FA5FA600450D07 /* CartViewModel.swift in Sources */,
 				07855B6129F5B4C500056CB3 /* KemInfoView.swift in Sources */,
+				07574E3F29FA642F00450D07 /* ViewModifier.swift in Sources */,
 				07855B1C29F5119600056CB3 /* RegisterView.swift in Sources */,
 				07855B5429F5B17900056CB3 /* DeviceInfoExtended.swift in Sources */,
 				07855B5E29F5B43800056CB3 /* NavigationView.swift in Sources */,
@@ -448,7 +477,6 @@
 				075ABEF429F5077000E3B700 /* AppleShopApp.swift in Sources */,
 				07855B1829F50F6100056CB3 /* Color.swift in Sources */,
 				07855B3429F51F1D00056CB3 /* DIManager.swift in Sources */,
-				07855B4A29F5A8B700056CB3 /* CoreDataService.swift in Sources */,
 				07855B2829F51B7400056CB3 /* CoreDataManager.swift in Sources */,
 				07855B5129F5B07500056CB3 /* DeviceInfo.swift in Sources */,
 			);

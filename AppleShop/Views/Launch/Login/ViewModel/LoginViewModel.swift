@@ -8,22 +8,13 @@
 import Foundation
 
 final class LoginViewModel: ObservableObject {
-    @Inject var coreData: CoreDataProtocol
+    @Inject var coreData: CoreDataManager
     
     @Published var username: String = ""
     @Published var password: String = ""
     
     @Published var showAlert: Bool = false
     @Published var message: String = ""
-    
-    
-    // MARK: CoreData
-    var users: [User] = []
-    init() { getUsers() }
-    
-    func getUsers() {
-        self.users = coreData.fetchUsers()
-    }
 }
 
 
@@ -40,7 +31,7 @@ extension LoginViewModel {
     }
     
     func userExist() -> Bool {
-        users.contains(where: { $0.username == username && $0.password == password })
+        coreData.users.contains(where: { $0.username == username && $0.password == password })
     }
 }
 

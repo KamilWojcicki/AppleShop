@@ -10,9 +10,10 @@ import CoreData
 
 // MARK: CoreData
 class CoreDataManager {
-    static let instance = CoreDataManager()
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
+    
+    let username = UserDefaults.standard.string(forKey: "username")
     var users: [User] = []
     var items: [Item] = []
     
@@ -25,33 +26,46 @@ class CoreDataManager {
         }
         context = container.viewContext
         
-        self.users = fetchUsers()
-        self.items = fetchItems()
+        fetchUsers()
+    }
+    
+    func save() {
+        do {
+            try context.save()
+            print("Saved successfully!")
+        } catch {
+            print("Error saving Core Data. \(error.localizedDescription)")
+        }
     }
 }
 
 
-// MARK: Functions User
+// MARK: Users functions
 extension CoreDataManager {
     
+    @discardableResult
     func fetchUsers() -> [User] {
         let request = NSFetchRequest<User>(entityName: "User")
         
         do {
-            let users = try context.fetch(request)
+            users = try context.fetch(request)
             return users
         } catch {
             print(error.localizedDescription)
             return []
         }
     }
-    //func fetching items
-    func fetchItems() -> [Item] {
-        let request = NSFetchRequest<Item>(entityName: "Item")
+    
+    func fetchUser() -> [User] {
+        guard let username = username else { fatalError() }
+        
+        let request = NSFetchRequest<User>(entityName: "User")
+        let filter = NSPredicate(format: "username == %@", username)
+        request.predicate = filter
         
         do {
-            let items = try context.fetch(request)
-            return items
+            users = try context.fetch(request)
+            return users
         } catch {
             print(error.localizedDescription)
             return []
@@ -65,61 +79,46 @@ extension CoreDataManager {
         newUser.password = password
         save()
     }
-    //func add items
-    func addItems(name: String, price: Double, username: String) {
-        let newItem = Item(context: context)
+    
+}
+
+// MARK: Items functions
+extension CoreDataManager {
+    
+    func fetchItems() -> [Item] {
+        let request = NSFetchRequest<Item>(entityName: "Item")
         
-        guard let indexUsers = users.firstIndex(where: {$0.username == username}) else { return }
+        do {
+            let items = try context.fetch(request)
+            return items
+        } catch {
+            print(error.localizedDescription)
+            return []
+        }
+    }
+    
+    func addItem(device: DeviceModel) {
+        users = fetchUsers()
+        
+        let newItem = Item(context: context)
+        guard let indexUsers = users.firstIndex(where: {$0.username == username})
+        else { return }
         
         newItem.id = UUID()
-        newItem.name = name
-        newItem.price = price
-        newItem.users = [users[indexUsers]]
+        newItem.name = device.name
+        newItem.price = device.price
+        newItem.addToUsers(users[indexUsers])
         save()
     }
     
-    func deleteItem(offset: IndexSet) {
-        //var items: [Item] = []
-        guard let removeItem = offset.first else { return }
-        let entity = items[removeItem]
+    func deleteItem(item entity: Item) {
         context.delete(entity)
         save()
     }
-    
-//    func deleteItem(id: UUID) {
-//        guard let indexItem = items.firstIndex(where: { $0.id == id }) else { return }
-//        
-//        let item = items[indexItem]
-//        context.delete(item)
-//        save()
-//    }
-    
-    func save() {
-        do {
-            try context.save()
-            print("Saved successfully!")
-            
-        } catch {
-            print("Error saving Core Data. \(error.localizedDescription)")
-        }
-    }
 }
 
-extension CoreDataManager {
-    func currentUser(username: String) throws -> User {
-        guard let indexUsers = users.firstIndex(where: {$0.username == username}) else { throw URLError(.fileDoesNotExist)}
-        
-        return users[indexUsers]
-    }
-}
 
-//extension CoreDataManager {
-//    func currentItem(id: UUID) throws -> Item {
-//        guard let indexItem = items.firstIndex(where: { $0.id == id }) else { throw URLError(.fileDoesNotExist)}
-//
-//        return items[indexItem]
-//    }
-//}
+
 
 
 
