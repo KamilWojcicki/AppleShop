@@ -10,13 +10,17 @@ import Foundation
 final class CartViewModel: ObservableObject {
     @Inject var coreData: CoreDataManager
     @Published var user: User? = nil
+    @Published var totalCost: Double = 0
     
-    init() { getUser() }
+    init() {
+        getUser()
+    }
     
     func getUser() {
         let users = coreData.fetchUser()
         user = users[0]
     }
+    
     
     func delete(entity: Item) {
         coreData.deleteItem(item: entity)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var vm = MainViewModel()
+    
     init() { _ = Dependencies() }
     
     var body: some View {
@@ -30,6 +31,7 @@ struct MainView: View {
         .onChange(of: vm.searchTerm) { newValue in
             vm.search(newValue)
         }
+        
     }
 }
 

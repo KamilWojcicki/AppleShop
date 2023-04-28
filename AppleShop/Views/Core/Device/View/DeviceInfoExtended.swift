@@ -10,7 +10,6 @@ import SwiftUI
 struct DeviceInfoExtended: View {
     @StateObject var vm = DeviceInfoExtendedViewModel()
     let dev: DeviceModel
-    
     init(dev: DeviceModel) {
         self.dev = dev
         _ = Dependencies()
@@ -48,7 +47,6 @@ struct DeviceInfoExtended: View {
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                     .padding(.top, 30)
             })
-            
             Spacer()
             Text("Designed by KEM")
             Text("Kamil-Eryk-Mateusz")

@@ -16,8 +16,6 @@ extension View {
     func customToolbar(title: String) -> some View {
         modifier(CustomToolbarViewModifier(title: title))
     }
-    
-    // Tutaj dodaj funkcje które rozszerzą View
 }
 
 
@@ -58,10 +56,7 @@ struct CustomToolbarViewModifier: ViewModifier {
                     }
                 }
             }
-        
     }
 }
-
-// Tutaj dodawaj sobie następne ViewModifier
 
 

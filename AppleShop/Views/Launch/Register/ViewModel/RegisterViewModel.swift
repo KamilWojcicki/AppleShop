@@ -47,10 +47,10 @@ extension RegisterViewModel {
         switch true {
         case userExist() == true:
             throw ValidationError.invalidUsername
-        case password.count < 3:
-            throw ValidationError.invalidPassword
         case emptyFields == true:
             throw ValidationError.emptyFields
+        case password.count < 3:
+            throw ValidationError.invalidPassword
         case password != confirmPassword:
             throw ValidationError.notMatch
         default:

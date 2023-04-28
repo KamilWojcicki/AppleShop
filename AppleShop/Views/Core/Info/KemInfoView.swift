@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct KemInfoView: View {
+    
+    
+    
     var body: some View {
         ScrollView {
             VStack{
@@ -36,7 +39,8 @@ struct KemInfoView: View {
                     
                     HStack(spacing: 20){
                         
-                          TextImageVStack(image: "kamil", name: "Kamil Wójcicki")
+                        TextImageVStack(image: "kamil", name: "Kamil Wójcicki")
+                            
                         TextImageVStack(image: "eryk", name: "Eryk Urban")
                         TextImageVStack(image: "mateusz", name: "Mateusz Zdunek")
                     }

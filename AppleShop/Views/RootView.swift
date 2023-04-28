@@ -29,5 +29,4 @@ struct RootView_Previews: PreviewProvider {
 
 class RootViewModel: ObservableObject {
     @Published var isLogin: Bool = false
-    
 }

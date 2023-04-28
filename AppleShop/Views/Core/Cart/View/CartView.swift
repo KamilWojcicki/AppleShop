@@ -12,31 +12,56 @@ struct CartView: View {
     init() { _ = Dependencies() }
     
     var body: some View {
-        List {
-            // MARK: Section 1
-            
-            Section {
-                if let user = vm.user {
-                    if let items = user.items?.allObjects as? [Item] {
-                        ForEach(items) { item in
-                            HStack {
-                                VStack {
-                                    Text(item.name ?? "")
-                                    Text("\(item.price)")
-                                }
-                                
-                                Spacer()
-                                
-                                Image(systemName: "xmark.circle")
-                                    .foregroundColor(.red)
-                                    .onTapGesture {
-                                        vm.delete(entity: item)
+        VStack {
+            List {
+                // MARK: Section 1
+                
+                Section {
+                    if let user = vm.user {
+                        if let items = user.items?.allObjects as? [Item] {
+                            
+                            if items.isEmpty {
+                                Text("EMPTY CART")
+                            } else {
+                                ForEach(items) { item in
+                                    
+                                        HStack {
+                                            
+                                            Text(item.name ?? "")
+                                                .padding()
+                                            
+                                            Spacer()
+                                            
+                                            Text("\(item.price, specifier: "%.2f") zł")
+                                            
+                                            Spacer()
+                                            
+                                            
+                                            
+                                            Image(systemName: "xmark.circle")
+                                                .foregroundColor(.red)
+                                                .onTapGesture {
+                                                    vm.totalCost -= item.price
+                                                    vm.delete(entity: item)
+                                                }
+                                        }
+                                    
+                                    
+                                    .onAppear{
+                                        vm.totalCost += item.price
                                     }
+                                }
                             }
                         }
                     }
                 }
+                
             }
+            .navigationTitle("Items:")
+            Text("Total cost: \(vm.totalCost, specifier: "%.2f") zł")
+                .font(.headline)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
         }
     }
 }

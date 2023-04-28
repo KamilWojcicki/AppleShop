@@ -17,6 +17,8 @@ enum ValidationError: LocalizedError {
     
     var errorDescription: String? {
         switch self {
+        case .emptyFields:
+            return "One or more fields are empty"
         case .invalid:
             return "Username or password is incorrect "
         case .invalidUsername:
@@ -25,8 +27,6 @@ enum ValidationError: LocalizedError {
             return "Password too short"
         case .notMatch:
             return "Passwords do not match."
-        case .emptyFields:
-            return "One or more fields are empty"
         }
     }
 }

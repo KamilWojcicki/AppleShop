@@ -27,6 +27,7 @@ class CoreDataManager {
         context = container.viewContext
         
         fetchUsers()
+        
     }
     
     func save() {
@@ -115,8 +116,8 @@ extension CoreDataManager {
         context.delete(entity)
         save()
     }
+    
 }
-
 
 
 

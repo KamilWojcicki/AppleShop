@@ -15,6 +15,10 @@ final class LoginViewModel: ObservableObject {
     
     @Published var showAlert: Bool = false
     @Published var message: String = ""
+    
+    var emptyFields: Bool {
+        username.isEmpty || password.isEmpty
+    }
 }
 
 
@@ -23,6 +27,8 @@ extension LoginViewModel {
     
     func validate() throws {
         switch true {
+        case emptyFields == true:
+            throw ValidationError.emptyFields
         case userExist() == false:
             throw ValidationError.invalid
         default:
