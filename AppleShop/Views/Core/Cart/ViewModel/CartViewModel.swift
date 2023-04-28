@@ -14,6 +14,7 @@ final class CartViewModel: ObservableObject {
     
     init() {
         getUser()
+        totalCostFromItems()
     }
     
     func getUser() {
@@ -21,6 +22,16 @@ final class CartViewModel: ObservableObject {
         user = users[0]
     }
     
+    func totalCostFromItems() {
+        if let user = user {
+            if let items = user.items?.allObjects as? [Item] {
+                for item in items {
+                  totalCost += item.price
+                }
+            }
+        }
+      
+    }
     
     func delete(entity: Item) {
         coreData.deleteItem(item: entity)

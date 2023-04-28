@@ -11,7 +11,6 @@
 		07574E3F29FA642F00450D07 /* ViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07574E3E29FA642F00450D07 /* ViewModifier.swift */; };
 		07574E4129FA64B700450D07 /* CustomSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07574E4029FA64B700450D07 /* CustomSection.swift */; };
 		075ABEF429F5077000E3B700 /* AppleShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075ABEF329F5077000E3B700 /* AppleShopApp.swift */; };
-		075ABEF629F5077000E3B700 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075ABEF529F5077000E3B700 /* ContentView.swift */; };
 		075ABEF829F5077100E3B700 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEF729F5077100E3B700 /* Assets.xcassets */; };
 		075ABEFB29F5077100E3B700 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 075ABEFA29F5077100E3B700 /* Preview Assets.xcassets */; };
 		075ABF0629F5080900E3B700 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075ABF0529F5080900E3B700 /* LoginView.swift */; };
@@ -47,7 +46,6 @@
 		07574E4029FA64B700450D07 /* CustomSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSection.swift; sourceTree = "<group>"; };
 		075ABEF029F5077000E3B700 /* AppleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075ABEF329F5077000E3B700 /* AppleShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleShopApp.swift; sourceTree = "<group>"; };
-		075ABEF529F5077000E3B700 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		075ABEF729F5077100E3B700 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		075ABEFA29F5077100E3B700 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		075ABF0529F5080900E3B700 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				075ABEF329F5077000E3B700 /* AppleShopApp.swift */,
-				075ABEF529F5077000E3B700 /* ContentView.swift */,
 				075ABF0829F50C3200E3B700 /* Resources */,
 				07855B2629F51B6400056CB3 /* Sources */,
 				075ABF0129F507AE00E3B700 /* Views */,
@@ -471,7 +468,6 @@
 				07855B1C29F5119600056CB3 /* RegisterView.swift in Sources */,
 				07855B5429F5B17900056CB3 /* DeviceInfoExtended.swift in Sources */,
 				07855B5E29F5B43800056CB3 /* NavigationView.swift in Sources */,
-				075ABEF629F5077000E3B700 /* ContentView.swift in Sources */,
 				07855B2329F5198C00056CB3 /* RootView.swift in Sources */,
 				07855B4829F5A82E00056CB3 /* DeviceService.swift in Sources */,
 				07855B4029F52A9700056CB3 /* LoginViewModel.swift in Sources */,

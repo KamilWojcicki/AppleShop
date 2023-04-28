@@ -25,31 +25,27 @@ struct CartView: View {
                             } else {
                                 ForEach(items) { item in
                                     
-                                        HStack {
+                                    HStack {
                                             
-                                            Text(item.name ?? "")
-                                                .padding()
+                                        Text(item.name ?? "")
+                                            .frame(maxWidth: 130, alignment: .leading)
+                                        Spacer()
+                                        
+                                        Text("\(item.price, specifier: "%.2f") zł")
                                             
-                                            Spacer()
+//                                            .frame(minWidth: 120)
                                             
-                                            Text("\(item.price, specifier: "%.2f") zł")
-                                            
-                                            Spacer()
-                                            
-                                            
-                                            
-                                            Image(systemName: "xmark.circle")
-                                                .foregroundColor(.red)
-                                                .onTapGesture {
-                                                    vm.totalCost -= item.price
-                                                    vm.delete(entity: item)
+                                        Spacer()
+                                        
+                                        
+                                        
+                                        Image(systemName: "xmark.circle")
+                                            .foregroundColor(.red)
+                                            .onTapGesture {
+                                                vm.totalCost -= item.price
+                                                vm.delete(entity: item)
                                                 }
                                         }
-                                    
-                                    
-                                    .onAppear{
-                                        vm.totalCost += item.price
-                                    }
                                 }
                             }
                         }
@@ -62,6 +58,12 @@ struct CartView: View {
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
+                
+        }
+    }
+    func test(items: [Item]) {
+        for item in items {
+            vm.totalCost += item.price
         }
     }
 }
