@@ -14,7 +14,6 @@ struct CartView: View {
     var body: some View {
         VStack {
             List {
-                // MARK: Section 1
                 
                 Section {
                     if let user = vm.user {
@@ -32,8 +31,6 @@ struct CartView: View {
                                         Spacer()
                                         
                                         Text("\(item.price, specifier: "%.2f") zł")
-                                            
-//                                            .frame(minWidth: 120)
                                             
                                         Spacer()
                                         
@@ -59,11 +56,6 @@ struct CartView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
                 
-        }
-    }
-    func test(items: [Item]) {
-        for item in items {
-            vm.totalCost += item.price
         }
     }
 }

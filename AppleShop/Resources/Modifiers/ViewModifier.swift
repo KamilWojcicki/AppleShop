@@ -2,7 +2,7 @@
 //  ViewModifier.swift
 //  AppleShop
 //
-//  Created by MaToSens on 27/04/2023.
+//  Created by Kamil Wójcicki on 27/04/2023.
 //
 
 import SwiftUI

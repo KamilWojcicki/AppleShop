@@ -35,7 +35,6 @@ struct LoginView_Previews: PreviewProvider {
 }
 
 
-// MARK: View Components
 extension LoginView {
     
     private var header: some View {

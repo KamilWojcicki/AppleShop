@@ -23,7 +23,6 @@ final class RegisterViewModel: ObservableObject {
 }
 
 
-// MARK: Functions
 extension RegisterViewModel {
     
     func signUp() throws {
@@ -40,7 +39,7 @@ extension RegisterViewModel {
 }
 
 
-// MARK: Validation
+// Walidacja
 extension RegisterViewModel {
     
     func validate() throws {

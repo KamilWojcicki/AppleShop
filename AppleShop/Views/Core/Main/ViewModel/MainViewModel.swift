@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+//wstrzykiwanie danych DeviceModel
+//private(set) oznacza dane tylko do odczytu na zewnątrz, nie ma możliwości ich modyfikacji
+//funkcja filtrująca data, szuka nazwy która zawiera wartość wpisaną przez użytkownika, poprzez ternary operator sprawdzamy czy fraza została wpisana, jeśli nie wyświetlamy data(wszystkie urządzenia), w przeciwnym wypadku przefiltrowane urządzenia.
 
 class MainViewModel: ObservableObject {
     @Inject var devices: DeviceServiceProtocol

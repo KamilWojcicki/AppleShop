@@ -22,7 +22,7 @@ final class LoginViewModel: ObservableObject {
 }
 
 
-// MARK: Validation
+//Walidacja
 extension LoginViewModel {
     
     func validate() throws {
