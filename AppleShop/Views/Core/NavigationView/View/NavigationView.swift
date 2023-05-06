@@ -9,7 +9,7 @@ import SwiftUI
 
 //atrybut State object działa jak @State tylko dostępne jest dla wielu widoków.
 
-//environment object używa się do przesyłania danych pomiędzy widokami(hierarchia widoków) nie musimy ręcznie przekazywać danych do każdego widoku. Aby to zadziałało musimy potrzebny jest ObservableObject czyli obiekt który inne widoki będą obserwować.
+//environment object używa się do przesyłania danych pomiędzy widokami(hierarchia widoków) nie musimy ręcznie przekazywać danych do każdego widoku. Aby to zadziałało potrzebny jest ObservableObject czyli obiekt który inne widoki będą obserwować.
 
 struct NavigationView: View {
     @StateObject private var vm = NavigationViewModel()
@@ -28,7 +28,6 @@ struct NavigationView: View {
                 }
             
         }
-        .environmentObject(vm)
     }
 }
 

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct KemInfoView: View {
     
-    
-    
     var body: some View {
         ScrollView {
             VStack{

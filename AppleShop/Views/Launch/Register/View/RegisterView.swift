@@ -30,7 +30,6 @@ struct RegisterView_Previews: PreviewProvider {
     }
 }
 
-// MARK: View Components
 extension RegisterView {
     
     private var header: some View {

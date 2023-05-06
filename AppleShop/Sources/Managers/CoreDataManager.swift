@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-// MARK: CoreData
 class CoreDataManager {
     let container: NSPersistentContainer
     let context: NSManagedObjectContext
@@ -41,7 +40,6 @@ class CoreDataManager {
 }
 
 
-// MARK: Users functions
 extension CoreDataManager {
     
     @discardableResult
@@ -83,7 +81,6 @@ extension CoreDataManager {
     
 }
 
-// MARK: Items functions
 extension CoreDataManager {
     
     func fetchItems() -> [Item] {

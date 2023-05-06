@@ -43,7 +43,7 @@ struct LaunchAppView_Previews: PreviewProvider {
 }
 
 
-// MARK: View Components
+
 extension LaunchAppView {
     
     private var button: some View {
